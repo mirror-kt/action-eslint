@@ -9,6 +9,7 @@ if [ ! -f "$(npm bin)/eslint" ]; then
 fi
 
 $(npm bin)/eslint --version
+echo ${INPUT_ESLINT_FLAGS:-'.'}
 
 if [ "${INPUT_REPORTER}" == 'github-pr-review' ]; then
   # Use jq and github-pr-review reporter to format result to include link to rule page.
